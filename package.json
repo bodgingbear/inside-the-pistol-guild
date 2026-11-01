@@ -11,7 +11,9 @@
     "build": "rollup --config rollup.config.dist.js",
     "start": "npm run dev:serve:watch",
     "app:dev": "electron main.js",
-    "app:dist": "electron-builder main.js -mw"
+    "app:dist": "electron-builder main.js -mw",
+    "build:cf": "npm run build && rm -rf cf-dist && mkdir -p cf-dist/projects/inside-the-pistol-guild/play && cp -R public/. cf-dist/projects/inside-the-pistol-guild/play/",
+    "deploy": "wrangler deploy"
   },
   "dependencies": {
     "phaser": "^3.22.0"

@@ -25,7 +25,7 @@ export class Score {
     this.scoreText.setOrigin(0, 0);
     this.score = 0;
 
-    this.highscore = +(window.localStorage.getItem('highscore') || 0);
+    this.highscore = +(window.localStorage.getItem('inside-the-pistol-guild:highscore') || 0);
     this.highscoreText = this.scene.add.text(
       40,
       75,
@@ -45,7 +45,7 @@ export class Score {
 
     if (this.score > this.highscore) {
       this.highscore = this.score;
-      window.localStorage.setItem('highscore', this.highscore.toString());
+      window.localStorage.setItem('inside-the-pistol-guild:highscore', this.highscore.toString());
       this.highscoreText.setText(`Highscore: ${this.highscore}`);
     }
   }
